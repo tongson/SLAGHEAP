@@ -9,7 +9,7 @@ invalid_command 2>&- | ( printf "testing -e\\n"; exit 0; )
 invalid_command 1>&- 2>&1 || :
 { invalid_command; } 2>&- || printf "testing -e\\n" 
 (invalid_command) 2>&- || printf "testing -e\\n"
-ls * 2>&- || printf "testing -f\\n"
+ls -- * 2>&- || printf "testing -f\\n"
 echo "${test:-testing -u}"
 env
 (env)
