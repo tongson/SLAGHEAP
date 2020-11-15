@@ -36,11 +36,11 @@ for y in $items; do
 done
 # ? false ? ?
 /usr/bin/printf '\xC3\xA4' |
-    LC_ALL=en_US.iso88591 grep '[[:alnum:]]' || echo false
+    LC_ALL=en_US.UTF-8 grep '[[:alnum:]]' || echo false
 /usr/bin/printf '\xC3\xA4' |
     LC_ALL=C grep '[[:alnum:]]' || echo false
 /usr/bin/printf '\xC3\xA4' |
-    LC_ALL=en_US.iso88591 grep "$(/usr/bin/printf '\xC3\xA4')" || echo false
+    LC_ALL=en_US.UTF-8 grep "$(/usr/bin/printf '\xC3\xA4')" || echo false
 /usr/bin/printf '\xC3\xA4' |
     LC_ALL=C grep "$(/usr/bin/printf '\xC3\xA4')" || echo false
 
