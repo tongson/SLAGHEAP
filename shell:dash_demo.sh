@@ -1,7 +1,7 @@
 #!/usr/bin/env -S -i dash -efu
 # dash demo
 export LC_ALL=C
-LFTAB="$(/usr/bin/printf "\\n\\tx")"
+LFTAB="$(printf "\\n\\tx")"
 export IFS="${LFTAB%x}"
 unset PWD # the only environment variable set by default
 invalid_command 2>&- | { printf "testing -e\\n"; exit 0; }
