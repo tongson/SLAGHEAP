@@ -29,6 +29,7 @@ items="a b c"
 for x in $items; do
     echo "$x"
 done
+# shellcheck disable=SC2169
 IFS=$'\t\n'
 for y in $items; do
     echo "$y"
