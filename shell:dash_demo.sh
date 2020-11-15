@@ -23,7 +23,7 @@ env
 {
     env
 }
-IFS=$' '
+IFS=' '
 items="a b c"
 for x in $items; do
     echo "$x"
