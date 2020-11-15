@@ -47,7 +47,7 @@ eof() {
     /usr/bin/printf '\x0A'
     printf "unreached"
 }
-read var <<-EOF
+read -r var <<-EOF
 $(eof)
 EOF
 printf "%s\\n" "$var"
