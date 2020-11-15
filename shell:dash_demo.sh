@@ -39,7 +39,8 @@ done
     LC_ALL=C grep "$(/usr/bin/printf '\xC3\xA4')" || echo false
 
 eof() {
-    printf 'test'
+    printf "test1\\n"
+    printf "not stored\\n"
     echo $'\004'
     printf "unreached"
 }
