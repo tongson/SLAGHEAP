@@ -1,4 +1,5 @@
 #!/usr/bin/env -S -i dash -efu
+# shellcheck disable=SC2096
 # dash demo
 export LC_ALL=C
 LFTAB="$(printf "\\n\\tx")"
