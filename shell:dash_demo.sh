@@ -46,5 +46,7 @@ eof() {
 read var <<-EOF
 $(eof)
 EOF
-printf %s "$var"
+printf "%s\\n" "$var"
+fnmatch () { case "$2" in $1) return 0 ;; *) return 1 ;; esac ; }
+fnmatch 'te?t*' "$var" && { printf "found\\n"; }
 printf -- "\\n-------- %s --------" "END"
