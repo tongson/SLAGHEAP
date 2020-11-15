@@ -43,7 +43,7 @@ eof() {
     echo $'\004'
     printf "unreached"
 }
-IFS= read var <<-EOF
+read var <<-EOF
 $(eof)
 EOF
 printf %s "$var"
