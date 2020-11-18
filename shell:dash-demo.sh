@@ -57,4 +57,4 @@ printf "%s\\n" "$var"
 # shellcheck disable=SC2254
 fnmatch () { case "$2" in $1) return 0 ;; *) return 1 ;; esac ; }
 fnmatch 'te?t*' "$var" && { printf "found\\n"; }
-printf -- "\\n-------- %s --------" "END"
+printf -- "\\n-------- %s --------\\n" "END"
