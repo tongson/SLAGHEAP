@@ -8,6 +8,7 @@ XLFTAB="$(printf '%b_' '\n\t')"
 XLFTAB="${XLFTAB%_}"
 test "$IFS" = "$XLFTAB"
 unset PWD # the only environment variable set by default
+# Hide errors
 invalid_command 2>&- | { printf "testing -e\\n"; exit 0; }
 invalid_command 2>&- | ( printf "testing -e\\n"; exit 0; )
 invalid_command 1>&- 2>&1 || :
