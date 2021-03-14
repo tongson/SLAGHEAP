@@ -18,6 +18,7 @@ invalid_command 1>&- 2>&1 || :
 ls -- * 2>&- || printf "testing -f\\n"
 # Does parameter substitution work when -u?
 echo "${test:-testing -u}"
+# Calling env MUST only show exported LC_ALL and IFS
 env
 (env)
 (
