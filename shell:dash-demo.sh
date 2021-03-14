@@ -16,6 +16,7 @@ invalid_command 1>&- 2>&1 || :
 (invalid_command) 2>&- || printf "testing -e\\n"
 # Does -f work?
 ls -- * 2>&- || printf "testing -f\\n"
+# Does parameter substitution work when -u?
 echo "${test:-testing -u}"
 env
 (env)
