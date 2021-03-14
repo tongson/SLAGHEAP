@@ -40,6 +40,7 @@ IFS=$'\t\n'
 for y in $items; do
     echo "$y"
 done
+# Test LC_ALL settings
 # ? false ? ?
 /usr/bin/printf '\xC3\xA4' |
     LC_ALL=en_US.UTF-8 grep '[[:alnum:]]' || echo false
