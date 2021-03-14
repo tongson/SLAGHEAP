@@ -53,6 +53,7 @@ done
 
 test_local()
 {
+    # Note: local inside subshells are not needed but good for consistency.
     local local_unreachable="x"
 }
 test_local
