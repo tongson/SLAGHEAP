@@ -8,12 +8,13 @@ XLFTAB="$(printf '%b_' '\n\t')"
 XLFTAB="${XLFTAB%_}"
 test "$IFS" = "$XLFTAB"
 unset PWD # the only environment variable set by default
-# Hide errors
+# Hide errors and does -f work?
 invalid_command 2>&- | { printf "testing -e\\n"; exit 0; }
 invalid_command 2>&- | ( printf "testing -e\\n"; exit 0; )
 invalid_command 1>&- 2>&1 || :
 { invalid_command; } 2>&- || printf "testing -e\\n" 
 (invalid_command) 2>&- || printf "testing -e\\n"
+# Does -f work?
 ls -- * 2>&- || printf "testing -f\\n"
 echo "${test:-testing -u}"
 env
