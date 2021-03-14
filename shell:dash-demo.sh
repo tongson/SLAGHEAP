@@ -50,9 +50,9 @@ eof() {
     printf "unreached"
 }
 test_local()
-(
+{
     local local_unreachable="x"
-)
+}
 test_local
 printf "%s\\n" "${local_unreachable:-local_ok}"
 test_global()
@@ -63,9 +63,11 @@ test_global
 printf "%s\\n" "${global_reachable:-global_not_ok}"
 test_sglobal()
 (
+    # shellcheck disable=SC2030
     sglobal_reachable="x"
 )
 test_sglobal
+# shellcheck disable=SC2031
 printf "%s\\n" "${sglobal_reachable:-global_in_subshell_ok}"
 read -r var <<-EOF
 $(eof)
