@@ -51,11 +51,6 @@ done
 /usr/bin/printf '\xC3\xA4' |
     LC_ALL=C grep "$(/usr/bin/printf '\xC3\xA4')" || echo false
 
-eof() {
-    printf "test1"
-    /usr/bin/printf '\x0A'
-    printf "unreached"
-}
 test_local()
 {
     local local_unreachable="x"
@@ -76,6 +71,12 @@ test_sglobal()
 test_sglobal
 # shellcheck disable=SC2031
 printf "%s\\n" "${sglobal_reachable:-global_in_subshell_ok}"
+# Test read() variables
+eof() {
+    printf "test1"
+    /usr/bin/printf '\x0A'
+    printf "unreached"
+}
 read -r var <<-EOF
 $(eof)
 EOF
