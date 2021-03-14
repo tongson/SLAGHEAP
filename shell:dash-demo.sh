@@ -81,6 +81,7 @@ read -r var <<-EOF
 $(eof)
 EOF
 printf "%s\\n" "$var"
+# fnmatch trick from etalabs
 # $1 intentionally unquoted
 # shellcheck disable=SC2254
 fnmatch () { case "$2" in $1) return 0 ;; *) return 1 ;; esac ; }
