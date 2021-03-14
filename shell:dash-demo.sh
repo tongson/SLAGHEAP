@@ -28,11 +28,13 @@ env
 {
     env
 }
+# Try a space IFS
 IFS=' '
 items="a b c"
 for x in $items; do
     echo "$x"
 done
+# Tab and newline IFS
 # shellcheck disable=SC2169
 IFS=$'\t\n'
 for y in $items; do
