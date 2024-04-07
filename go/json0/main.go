@@ -10,8 +10,7 @@ import (
 const cCURSOR = "/var/run/json0.cursor"
 
 func main() {
-	var journalctl lib.RunArgs
-	journalctl = lib.RunArgs{
+	var journalctl = lib.RunArgs{
 		Exe: "/usr/bin/journalctl",
 		Args: []string{
 			"--output=json-seq",
