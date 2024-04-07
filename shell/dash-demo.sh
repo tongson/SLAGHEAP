@@ -35,8 +35,7 @@ for x in $items; do
     echo "$x"
 done
 # Tab and newline IFS
-# shellcheck disable=SC2169
-IFS=$'\t\n'
+IFS=$(printf '\n\t')
 for y in $items; do
     echo "$y"
 done
