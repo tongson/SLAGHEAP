@@ -28,7 +28,7 @@ func main() {
 	urlPtr := flag.String("url", "", "pushgateway URL")
 	flag.Parse()
 	if *urlPtr == "" {
-                fmt.Fprintln(os.Stderr, "URL must be set")
+		fmt.Fprintln(os.Stderr, "URL must be set")
 		os.Exit(1)
 	}
 	if err := prompgPush(*urlPtr); err != nil {
