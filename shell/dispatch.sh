@@ -1,3 +1,7 @@
+# https://github.com/tongson/SLAGHEAP/blob/main/shell/dispatch.sh
+#
+# POSIX-compatible printing and shellcheck pass.
+#
 # https://github.com/rubiojr/lstack/blob/master/lib/dispatch.sh 
 #
 # Command line dispatcher from workshop with some small tweaks to improve
